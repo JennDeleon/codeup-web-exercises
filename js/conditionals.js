@@ -63,6 +63,7 @@ let color = prompt("What  is your favorite color?")
 function analyzeColor(color) {
     switch (color) {
         case "purple":
+        case "light purple":
             alert(color + " is my favorite color too!")
             break;
         case "blue":
@@ -126,7 +127,7 @@ function calculateTotal(luckyNumber, totalAmount) {
     } else if (luckyNumber === 5) {
         return (0);
     } else
-        return (totalAmount + "You didn't get a lucky number, sorry!");
+        return (totalAmount + " You didn't get a lucky number, sorry!");
 }
 
 /**
