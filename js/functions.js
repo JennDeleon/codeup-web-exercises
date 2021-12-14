@@ -111,4 +111,4 @@ function applyDiscount(price, percentDiscounted){
 }
 console.log(applyDiscount(30, .10));
 console.log(applyDiscount(50, .20));
-console.log(applyDiscount(100, .50))
+console.log(applyDiscount(100, .50));
