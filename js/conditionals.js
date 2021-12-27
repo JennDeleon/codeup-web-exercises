@@ -170,11 +170,15 @@ function userNumber (number) {
         alert (number + " is even!");
     } else {
         alert (number + " is odd!");
-    } if (number >= 100) {
+    } 
+    
+    if (number >= 100) {
         alert (number + " is greater than 100!");
     } else {
         alert (number + " is less than 100!");
-    } if ( number > 0){
+    } 
+    
+    if ( number > 0){
         alert (number + " is positive");
     } else {
         alert (number + " is negative")
