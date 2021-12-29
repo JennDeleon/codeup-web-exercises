@@ -1,3 +1,4 @@
+
 //     In that file, write a program that receives user input and analyzes the input differently if the input is a number or a string. If the input is a string, it will analyze the string differently if it is length 1.
 
 var input = prompt("Whats your number?");
@@ -11,21 +12,14 @@ function analyze(input){
 }
 analyze(input);
 
-// var input = parseInt(prompt("Whats your number?"));
-// function analyze(input){
-//     switch (input) {
-//         case typeof input === "string":
-//             alert("Thats a string");
-//             break;
-//         case typeof input === NaN:
-//             alert("Thats a number");
-//     }
-// }
-// alert(analyze(input));
 
 // Following are the rules of analysis:
 //     If the input is a number:
 //     Output if the number is odd or even (zero is considered even). Use your function from Exercise 2 for this functionality.
+
+
+analyze(num)
+
 
 //     Output if the number is negative, positive, or zero
 // If the input is a string:
