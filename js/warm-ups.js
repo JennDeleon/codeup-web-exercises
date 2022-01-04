@@ -89,10 +89,10 @@
 // function oddOrEven(num) {
 //     for (var x=0; x <= num; x++) {
 //         if (x % 2 === 0) {
-//             console.log(x + " is even");
+//             console.log(x + " is an even iteration");
 //         }
 //         else {
-//             console.log(x + " is odd");
+//             console.log(x + " is an odd iteration");
 //         }
 //     }
 // }
@@ -104,7 +104,7 @@
 // //          -> If the max attempt used unsuccessfully, alert the user of such and RETURN or BREAK
 // //      -> Once the user enters the correct password, use the 'break' keyword to end the loop
 // //      -> After the loop concludes, alert the use they have entered the correct password
-//
+// 
 // function getPassword() {
 //     let password = "badpassword";
 //     let guess = "";
@@ -112,6 +112,9 @@
 //     guess = prompt("Enter your password");
 //         if (guess === password){
 //             alert("logged in");
+//             break;
+//         } if (i === 2){
+//             alert("WRONG");
 //             return;
 //         }
 //     }
