@@ -55,7 +55,7 @@ for (var i = 1; i <= 10; i++) {
 //
 var x = "";
 for (var more = 1; more <= 9; more++) {
-    for (var i = 1; i <= more; i++){
+    for (var i = 1; i <= more; i++){ //nested loop
         x += more + "";
     }
     console.log(x);
@@ -87,5 +87,3 @@ for (var more = 1; more <= 9; more++) {
 for (var b = 100; b >= 5; b-= 5) {
     console.log(b);
 }
-
-console.log(b)
