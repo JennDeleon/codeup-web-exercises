@@ -127,7 +127,7 @@
 // -Write a function that accepts an array as a parameter and...
 // -> logs the first, third, and last elements of that array
 // -Invoke your function and pass favoriteArtists as an argument
-var favArtists = ['Circa', 'Midnight', 'Bishop', 'Timecop', 'Random']
+var favArtists = ['Circa', 'Midnight', 'Bishop', 'Timecop', 'Portugal']
 function array (x){
     return console.log(favArtists[0], (favArtists[2]), (favArtists[4]));
 }
