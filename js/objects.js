@@ -54,6 +54,17 @@ person.sayHello = function (){
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
+shoppers.forEach(function(shopper){
+    var discountAmount = .12;
+    var newTotal = (shopper.amount - (shopper.amount * discountAmount));
+    console.log(shopper.name + ' original total: ');
+    console.log(shopper.amount);
+    if (shopper.amount > 200){
+        console.log("With discount you get " + Math.round((shopper.amount - newTotal)) + " dollars off")
+        console.log("Your new total is: " + newTotal);
+    } else {
+    }
+});
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
