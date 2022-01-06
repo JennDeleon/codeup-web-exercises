@@ -78,6 +78,48 @@ shoppers.forEach(function(shopper){
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books =[
+        {
+            title: "'Kindred'",
+            author: {
+                firstName: "Octavia",
+                lastName: "Butler"
+            }
+        },
+        {
+            title: "'Harry Potter and the Philosopher's Stone'",
+            author: {
+                firstName: "J. K.",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: "'World War Z'",
+            author: {
+                firstName: "Max",
+                lastName: "Brooks"
+            }
+        },
+        {
+            title: "'The Caves of Steel'",
+            author: {
+                firstName: "Isaac",
+                lastName: "Asimov"
+            }
+        },
+        {
+            title: "'I, Robot'",
+            author: {
+                firstName: "Isaac",
+                lastName: "Asimov"
+            }
+        }
+    ]
+    // console.log("The first book is " + books[0].title + " by " + books[0].author.firstName + " " + books[0].author.lastName)
+    // console.log("The second book is " + books[1].title + " by " + books[1].author.firstName + " " + books[1].author.lastName)
+    // console.log("The third book is " + books[2].title + " by " + books[2].author.firstName + " " + books[2].author.lastName)
+    // console.log("The fourth book is " + books[3].title + " by " + books[3].author.firstName + " " + books[3].author.lastName)
+    // console.log("The fifth book is " + books[4].title + " by " + books[4].author.firstName + " " + books[4].author.lastName)
 
     /**
      * TODO:
@@ -103,6 +145,12 @@ shoppers.forEach(function(shopper){
      *      ---
      *      ...
      */
+    function allBooks(books){
+        for (var i = 0; i < books.length; i++) {
+            console.log( "Book # " + (i + 1) + " is " + books[i].title + " by " + books[i].author.firstName + " " + books[i].author.lastName);
+        }
+    }
+    allBooks(books);
 
     /**
      * Bonus:
@@ -114,5 +162,6 @@ shoppers.forEach(function(shopper){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
 
 })();
