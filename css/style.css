@@ -1,19 +1,28 @@
-
+p {
+    text-align: center;
+}
 h1.fancy-header {
     color: darkslategrey;
     text-align: center;
-
+}
+#tag {
+    color: coral;
+    font-size: 18px;
+    padding-top: 0;
 }
 h2.fancy-header {
     color: #4a646c;
     text-decoration: underline;
+    text-align: center;
 }
 body{
-    background-color: rosybrown;
+    background-color: lightgray;
     background-image: url("../images/square-circle2.png");
-    background-position: inherit;
+    background-size: 90%;
+    background-position: center;
     background-repeat: no-repeat;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
     padding: 1px 3px 30px 20px;
 }
 hr {
@@ -21,29 +30,33 @@ hr {
     border: 0;
     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 }
- ol {
+ol {
      list-style: upper-roman;
- }
- li {
-     list-style-type: square;
- }
+
+}
+li {
+    list-style-type: square;
+    text-align: center;
+    list-style-position: inside;
+    text-shadow: 2px 2px 4px darkslategray;
+}
 .text {
      font-family: 'Roboto Slab', serif;
  }
 #page-wrap {
-    display: inline-block;
     justify-content: center;
 }
 footer {
     text-align: center;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 18px;
 }
 table, th, td{
     border-collapse: collapse;
     border: 1px solid black;
     text-align: center;
     vertical-align: middle;
+    margin: 0 auto;
 }
 .cell-highlight {
     background-color: gold;
@@ -51,7 +64,7 @@ table, th, td{
 }
 
 a:link {
-    color: green;
+    color: rosybrown;
 }
 
 a:visited {
@@ -64,4 +77,7 @@ a:hover {
 
 a:active {
     color: yellow;
+}
+#center {
+    text-align: center;
 }
