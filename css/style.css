@@ -14,7 +14,7 @@ body{
     background-position: inherit;
     background-repeat: no-repeat;
     font-family: 'Dosis', sans-serif;
-    position: center;
+    padding: 1px 3px 30px 20px;
 }
 hr {
     height: 12px;
