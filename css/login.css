@@ -59,8 +59,8 @@ fieldset {
     /* The text color of this element should be white and bold */
     color: white;
     /* The border of this element should be 1px, and its color should be light grey */
-    border: 1px;
-    border-color: lightgray;
+    border-width: 1px;
+    border-color: #D3D3D3;
     background-color: #0fb784;
 }
 
@@ -72,7 +72,7 @@ fieldset {
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: calc(100% - 13px);;
+    width: calc(100% - 12px);;
 }
 
 
