@@ -1,3 +1,31 @@
-h1 {
-    color: purple;
+
+h1.fancy-header {
+    color: darkslategrey;
+    text-align: center;
+
 }
+h2.fancy-header {
+    color: #4a646c;
+    text-decoration: underline;
+}
+body{
+    background-color: rosybrown;
+    background-image: url("../images/square-circle2.png");
+    background-position: inherit;
+    background-repeat: no-repeat;
+    font-family: 'Dosis', sans-serif;
+}
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+ ol {
+     list-style: upper-roman;
+ }
+ li {
+     list-style-type: square;
+ }
+.text {
+     font-family: 'Roboto Slab', serif;
+ }
