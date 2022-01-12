@@ -4,6 +4,7 @@ p {
 h1.fancy-header {
     color: darkslategrey;
     text-align: center;
+    text-shadow: 0px 1px 1px #4d4d4d;
 }
 #tag {
     color: coral;
@@ -23,7 +24,6 @@ body{
     background-repeat: no-repeat;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
-    padding: 1px 3px 30px 20px;
 }
 hr {
     height: 12px;
@@ -51,7 +51,11 @@ footer {
     font-weight: bold;
     font-size: 18px;
 }
+table {
+    width: 55%
+}
 table, th, td{
+    table-layout: auto;
     border-collapse: collapse;
     border: 1px solid black;
     text-align: center;
@@ -59,8 +63,21 @@ table, th, td{
     margin: 0 auto;
 }
 .cell-highlight {
-    background-color: gold;
+    background-color: #ffffb1;
     font-weight: bold;
+    color: darkslategray;
+}
+.cell-title {
+    background-color: dimgrey;
+}
+.basic-cell {
+    color: darkslategray;
+}
+.asterisk {
+    display: flex;
+    font-size: 15px;
+    margin: auto;
+    width: 55%;
 }
 
 a:link {
