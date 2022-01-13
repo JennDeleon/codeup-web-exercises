@@ -1,0 +1,44 @@
+.plate {
+    padding-top: 50px;
+    margin: auto;
+    height: 200px;
+    width: 300px;
+    border: 2px solid dodgerblue;
+    border-radius: 350px;
+    text-align: center;
+    background-color: white;
+}
+.pb {
+    background-color: sandybrown;
+    margin: auto;
+    height: 10px;
+    width: 100px;
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 5px;
+}
+.j{
+    background-color: rebeccapurple;
+    margin: auto;
+    height: 10px;
+    width: 100px;
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 5px;
+}
+.bread {
+    background-color: saddlebrown;
+    margin: auto;
+    height: 30px;
+    width: 100px;
+    border: 2px solid;
+    border-radius: 12px;
+    padding: 5px;
+}
+p{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+body {
+    background-color: grey;
+}
