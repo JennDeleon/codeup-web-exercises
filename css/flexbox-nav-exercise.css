@@ -6,27 +6,24 @@
     font-weight: bolder;
     justify-content: space-between;
 }
-.nav a {
+a {
     display: inline-block;
     align-content: center;
     color: black;
     text-align: center;
     padding: 14px ;
     text-decoration: none;
-    font-family: Montserrat, sans-serif;
     box-sizing: border-box;
 }
 .first-half .second-half{
-    font-size: 18px;
+    font-family: Montserrat, sans-serif;
+    font-size: 5px;
 }
-/*.first-half {*/
-/*    float: left;*/
-/*}*/
-/*.second-half{*/
-/*    float: right;*/
-/*}*/
-.nav a:hover {
-    background-color: #ddd;
+.logo{
+    font-family: Work Sans, sans-serif;
+    font-size: 20px;
+}
+a:hover {
     color: blue;
 }
 .nav a.active {
@@ -34,9 +31,3 @@
     color: white;
 }
 
-.logo{
-    display: inline-block;
-    justify-content: center;
-    font-family: Work Sans, sans-serif;
-    font-size: 30px;
-}
