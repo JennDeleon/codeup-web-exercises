@@ -133,13 +133,18 @@
 // }
 // array(favArtists)
 var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"]
-function removeAll(array, value) {
-    let filterBugs = [];
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] !== value) {
-            filterBugs.push(array[i]);
-        }
+// function removeAll(array, value) {
+//     let filterBugs = [];
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] !== value) {
+//             filterBugs.push(array[i]);
+//         }
+//     }
+//         return filterBugs;
+// }
+    function removeALL(array,value){
+        return array.filter(function (filter){
+            return filter !== value;
+        });
     }
-        return filterBugs;
-}
-console.log(removeAll(bugs, "ant"));
+console.log(removeALL(bugs, "ant"));
