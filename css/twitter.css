@@ -55,7 +55,7 @@ a {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
     background: var(--light-bg);
-    font-weight: bold;
+    font-weight: bold;`
     padding: 8px;
     border-radius: 5px;
 }
@@ -75,4 +75,7 @@ a {
 }
 .profile-img{
     position: absolute;
+}
+.profile-form {
+    float: right;
 }
