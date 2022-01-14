@@ -127,8 +127,19 @@
 // -Write a function that accepts an array as a parameter and...
 // -> logs the first, third, and last elements of that array
 // -Invoke your function and pass favoriteArtists as an argument
-var favArtists = ['Circa', 'Midnight', 'Bishop', 'Timecop', 'Portugal']
-function array (x){
-    return console.log(favArtists[0], (favArtists[2]), (favArtists[4]));
+// var favArtists = ['Circa', 'Midnight', 'Bishop', 'Timecop', 'Portugal']
+// function array (x){
+//     return console.log(favArtists[0], (favArtists[2]), (favArtists[4]));
+// }
+// array(favArtists)
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"]
+function removeAll(array, value) {
+    let filterBugs = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] !== value) {
+            filterBugs.push(array[i]);
+        }
+    }
+        return filterBugs;
 }
-array(favArtists)
+console.log(removeAll(bugs, "ant"));
