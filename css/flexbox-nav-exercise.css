@@ -4,6 +4,7 @@
     background-color: grey;
     overflow: hidden;
     font-weight: bolder;
+    justify-content: space-between;
 }
 .nav a {
     display: inline-block;
@@ -32,9 +33,7 @@
     background-color: #04AA6D;
     color: white;
 }
-.p {
 
-}
 .logo{
     display: inline-block;
     justify-content: center;
