@@ -132,7 +132,7 @@
 //     return console.log(favArtists[0], (favArtists[2]), (favArtists[4]));
 // }
 // array(favArtists)
-var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"]
+// var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"]
 // function removeAll(array, value) {
 //     let filterBugs = [];
 //     for (let i = 0; i < array.length; i++) {
@@ -142,9 +142,30 @@ var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "re
 //     }
 //         return filterBugs;
 // }
-    function removeALL(array,value){
-        return array.filter(function (filter){
-            return filter !== value;
-        });
+//     function removeALL(array,value){
+//         return array.filter(function (filter){
+//             return filter !== value;
+//         });
+//     }
+// console.log(removeALL(bugs, "ant"));
+
+var myCats = [
+    {
+        catName: "Fifi",
+        age: 5
+    },
+    {
+        catName: "Fluffy",
+        age: 3
+    },
+    {
+        catName: "Abby",
+        age: 7
     }
-console.log(removeALL(bugs, "ant"));
+];
+function getNthCat(catName, n){
+    return myCats[n];
+
+}
+// print out the cat at index 1
+console.log(getNthCat(myCats, 1));
