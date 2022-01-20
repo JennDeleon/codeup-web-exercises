@@ -1,5 +1,5 @@
 
 
-@media only screen and (min-width: 600px) {
-
+.pizza {
+    background-image: url(../images/pizza.png);
 }
