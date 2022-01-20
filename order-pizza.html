@@ -48,6 +48,8 @@
             pizza world!</p>
     </div>
 </div>
+
+
 <ul class="nav nav-tabs">
     <li class="nav-item">
         <a class="nav-link active" href="#"><i class="fas fa-circle"></i> Size and crust</a>
@@ -59,7 +61,7 @@
         <a class="nav-link" href="#"><i class="fas fa-circle" style="color: dimgray"></i> Toppings</a>
     </li>
 </ul>
-<!--start hand tossed-->
+<!--start hand tossed card 1-->
 <div class="card">
     <div class="card-body" style="background-color: #017bfe; color: #ffffff; padding: .5em;">
         Choose size and crust
@@ -117,42 +119,96 @@
     </div>
 </div>
 <!--card 2 -->
-    <div class="card">
-        <div class="card-header bg-primary text-white">Choose cheese and sauce</div>
-        <div class="card-body size-crust">
 
-                <div class="card" >
-                    <div class="card-header">
-                        Cheese
-                    </div>
-                    <p>How much?</p>
-                    <select class="form-control form-control-sm">
-                        <option>Light</option>
-                        <option>Normal</option>
-                        <option>Extra</option>
-                        <option>Double</option>
-                    </select>
-                </div>
-            <br>
-                <div class="card" >
-                    <div class="card-header">
-                        Sauce
-                    </div>
-                    <p>What type?</p>
-                    <select class="form-control form-control-sm">
-                        <option>Tomato sauce</option>
-                        <option>Marinara sauce</option>
-                        <option>BBQ Sauce</option>
-                    </select>
-                </div>
+<div class="card">
+    <div class="card-header bg-primary text-white">Choose cheese and sauce</div>
+    <div class="card-body size-crust">
 
+        <div class="card">
+            <div class="card-header">
+                Cheese
+            </div>
+            <div class="card" style="padding: 10px">
+                <p>How much?</p>
+                <select class="form-control form-control-sm">
+                    <option>Light</option>
+                    <option>Normal</option>
+                    <option>Extra</option>
+                    <option>Double</option>
+                </select>
+            </div>
         </div>
-        <div class="card-footer text-muted">
-            <button type="button" class="btn float-right btn-primary">Next</button>
-            <button type="button" class="btn float-right btn-primary">Previous</button>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Sauce
+            </div>
+            <div class="card" style="padding: 10px">
+                <p class="card-title">What type?</p>
+                <select class="form-control form-control-sm">
+                    <option>Tomato sauce</option>
+                    <option>Marinara sauce</option>
+                    <option>BBQ Sauce</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer text-muted">
+        <button type="button" class="btn float-right btn-primary">Next</button>
+        <button type="button" class="btn float-right btn-primary">Previous</button>
+    </div>
+</div>
+<!--   Toppings card start-->
+<div class="card">
+    <div class="card-header bg-primary text-white">Choose toppings</div>
+    <div class="card-body size-crust">
+        <div class="form-check" style="padding-left: 0;">
+            <div class="card">
+                <div class="card-header">
+                    Crispy Thin
+                </div>
+                <div class="inline-field" style="padding: 8px;">
+                    <input type="checkbox" id="topping1" name="topping1" value="Beef">
+                    <label for="topping1"> Beef</label><br>
+                    <input type="checkbox" id="topping2" name="topping2" value="Ham">
+                    <label for="topping2"> Ham</label><br>
+                    <input type="checkbox" id="topping3" name="topping3" value="Philly Steak">
+                    <label for="topping3"> Philly Steak</label><br>
+                </div>
+
+            </div>
+            </select>
+        </div>
+        <br>
+        <div class="form-check" style="padding-left: 0;">
+            <div class="card">
+                <div class="card-header">
+                    Hand tossed
+                </div>
+                <div class="inline-field" style="padding: 8px;">
+                    <input type="checkbox" id="topping4" name="topping1" value="Green Peppers">
+                    <label for="topping1"> Green Peppers</label>
+                    <br>
+                    <input type="checkbox" id="topping5" name="topping2" value="Mushrooms">
+                    <label for="topping2"> Mushrooms</label><br>
+                    <input type="checkbox" id="topping6" name="topping3" value="Onions">
+                    <label for="topping3"> Onions</label><br>
+                    <input type="checkbox" id="topping7" name="topping3" value="Jalepeño Peppers">
+                    <label for="topping3"> Jalepeño Peppers</label><br>
+                </div>
+            </div>
         </div>
     </div>
-
+    <div class="card-footer text-muted">
+        <button type="button" class="btn float-right btn-primary">Checkout <i
+                class="fas fa-shopping-cart"></i>
+        </button>
+    </div>
+    <!--        end card 3    -->
+</div>
+</div>
+<br>
 
 </body>
 </html>

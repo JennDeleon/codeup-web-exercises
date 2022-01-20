@@ -21,7 +21,7 @@
         display: flex;
         justify-content: right;
     }
-    .p {
+    card> .p {
         margin-left: 5px;
     }
 }
