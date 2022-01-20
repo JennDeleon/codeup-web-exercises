@@ -40,79 +40,90 @@
         <button type="button" class="btn btn-light" style="color: dimgray">Signup</button>
     </div>
 </nav>
-
+<br>
 <div class="mobile-hide">
-    <div class="jumbotron bg-cover jumbotron-fluid" style="background-image: url(./images/pizza.png)">
+    <div class="jumbotron bg-cover jumbotron-fluid"> <img src="images/pizza.png" alt="pizza">
         <p class="lead"
            style="font-size: 50px; background: white; opacity: 0.75; display: flex; justify-content: center;">Welcome to
             pizza world!</p>
     </div>
 </div>
-
-
-<ul class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link active" href="#"><i class="fas fa-circle"></i> Size and crust</a>
+<br>
+<h3>Build your own pizza!</h3>
+<!--         TABS       -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a href="#home" class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+           type="button"
+           role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-circle"></i> Crust and Size</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-circle" style="color: dimgray"></i> Cheese and Sauce</a>
+    <li class="nav-item" role="presentation">
+        <a href="#profile" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+           type="button" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-circle"></i> Cheese
+            and Sauce</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-circle" style="color: dimgray"></i> Toppings</a>
+    <li class="nav-item" role="presentation">
+        <a href="#contact" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+           type="button" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-circle"></i> Toppings</a>
     </li>
 </ul>
+<!--        TABS END    -->
 <!--start hand tossed card 1-->
-<div class="card">
-    <div class="card-body" style="background-color: #017bfe; color: #ffffff; padding: .5em;">
-        Choose size and crust
-    </div>
-    <div class="card" style="padding: .5em;">
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="card">
-            <div class="card-header">
-                Hand Tossed
+            <div class="card-body" style="background-color: #017bfe; color: #ffffff; padding: .5em;">
+                Choose size and crust
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item">
-                    <div>
-                        <input type="radio" id="small" name="drone" value="small"
-                               checked>
-                        <label for="small">Small (10")</label>
+            <div class="card" style="padding: .5em;">
+                <div class="card">
+                    <div class="card-header">
+                        Hand Tossed
                     </div>
-                </li>
-                <li class="list-group-item">
-                    <div>
-                        <input type="radio" id="medium" name="drone" value="medium">
-                        <label for="small">Medium (12")</label>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                        <li class="list-group-item">
+                            <div>
+                                <input type="radio" id="small" name="drone" value="small"
+                                       checked>
+                                <label for="small">Small (10")</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <input type="radio" id="medium" name="drone" value="medium">
+                                <label for="small">Medium (12")</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--        end card hand tossed    -->
+                <br>
+                <!--        start card thin crust   -->
+                <div class="card">
+                    <div class="card-header">
+                        Featured
                     </div>
-                </li>
-            </ul>
-        </div>
-        <!--        end card hand tossed    -->
-        <br>
-        <!--        start card thin crust   -->
-        <div class="card">
-            <div class="card-header">
-                Featured
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Crispy Thin</li>
+                        <li class="list-group-item">
+                            <div>
+                                <input type="radio" id="thin-medium" name="drone" value="thin-medium"
+                                       checked>
+                                <label for="thin-medium">Medium (12")</label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <input type="radio" id="thin-large" name="drone" value="thin-large">
+                                <label for="thin-large">Large (14")</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--        end card thin crust    -->
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Crispy Thin</li>
-                <li class="list-group-item">
-                    <div>
-                        <input type="radio" id="thin-medium" name="drone" value="thin-medium"
-                               checked>
-                        <label for="thin-medium">Medium (12")</label>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div>
-                        <input type="radio" id="thin-large" name="drone" value="thin-large">
-                        <label for="thin-large">Large (14")</label>
-                    </div>
-                </li>
-            </ul>
         </div>
-        <!--        end card thin crust    -->
     </div>
     <div class="card-footer" style="display:flex; justify-content: right;">
         <button type="button" class="btn btn-primary">Next step ></button>
@@ -166,7 +177,7 @@
         <div class="form-check" style="padding-left: 0;">
             <div class="card">
                 <div class="card-header">
-                    Crispy Thin
+                    Choose Meats
                 </div>
                 <div class="inline-field" style="padding: 8px;">
                     <input type="checkbox" id="topping1" name="topping1" value="Beef">
@@ -184,7 +195,7 @@
         <div class="form-check" style="padding-left: 0;">
             <div class="card">
                 <div class="card-header">
-                    Hand tossed
+                    Choose Non-Meats
                 </div>
                 <div class="inline-field" style="padding: 8px;">
                     <input type="checkbox" id="topping4" name="topping1" value="Green Peppers">

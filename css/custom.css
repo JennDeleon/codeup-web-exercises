@@ -1,27 +1,5 @@
+
+
 @media only screen and (min-width: 600px) {
-    .signup {
-        text-decoration-color: grey;
-        display: flex;
-        justify-content: right;
-    }
-    .jumbotron {
-        background-repeat: no-repeat;
-    }
 
-    .container {
-        max-height: fit-content;
-        margin: 0;
-        padding: 0;
-    }
-    .list-group {
-
-        margin: 15em;
-    }
-    .btn {
-        display: flex;
-        justify-content: right;
-    }
-    card> .p {
-        margin-left: 5px;
-    }
 }
