@@ -1,0 +1,44 @@
+hr {
+    background-color: #95aa75;
+    height: 5px;
+}
+
+body {
+    align-content: center;
+    font-family: Arial, serif;
+    background-color: lightgrey;
+}
+
+.top-half {
+    font-family: Arial, serif;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.bottom-half-header {
+    font-size: 20px;
+    color: #4f82fb;
+}
+
+.small-headers {
+    font-weight: bold;
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    line-height: .5em;
+    font-family: Arial, serif;
+    font-weight: bold !important;
+}
+
+li {
+    list-style-type: circle;
+}
+
+img {
+    align-content: center;
+    width: 15%;
+    height: 15%;
+    object-fit: contain;
+    border-radius: 50%;
+}

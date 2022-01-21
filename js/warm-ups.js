@@ -149,23 +149,23 @@
 //     }
 // console.log(removeALL(bugs, "ant"));
 
-var myCats = [
-    {
-        catName: "Fifi",
-        age: 5
-    },
-    {
-        catName: "Fluffy",
-        age: 3
-    },
-    {
-        catName: "Abby",
-        age: 7
-    }
-];
-function getNthCat(catName, n){
-    return myCats[n];
-
-}
-// print out the cat at index 1
-console.log(getNthCat(myCats, 1));
+// var myCats = [
+//     {
+//         catName: "Fifi",
+//         age: 5
+//     },
+//     {
+//         catName: "Fluffy",
+//         age: 3
+//     },
+//     {
+//         catName: "Abby",
+//         age: 7
+//     }
+// ];
+// function getNthCat(catName, n){
+//     return myCats[n];
+//
+// }
+// // print out the cat at index 1
+// console.log(getNthCat(myCats, 1));
