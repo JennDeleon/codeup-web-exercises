@@ -44,12 +44,14 @@
         object-fit: contain;
         border-radius: 50%;
     }
+
     a:hover {
         color: #df9f0f;
     }
 }
-@media(min-width:768px){
-    .contact{
+
+@media (min-width: 768px) {
+    .contact {
         display: flex;
         justify-content: space-evenly;
     }
