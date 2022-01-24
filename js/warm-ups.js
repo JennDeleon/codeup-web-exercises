@@ -169,3 +169,21 @@
 // }
 // // print out the cat at index 1
 // console.log(getNthCat(myCats, 1));
+
+function reverseString(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+console.log(reverseString("hello"));
+// OR
+
+
+function reverseS (string){
+    let newString = string.split("");
+    newString.reverse("")
+    return newString.join("")
+}
+console.log(reverseS("hello"));
