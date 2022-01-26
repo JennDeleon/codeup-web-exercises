@@ -2,24 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="css/defuse.css">
+<!-- I linked a css page just to play around with stuff-->
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
 </head>
 <body>
-<h2 style="color: blue"; id="message";>This BOM will self destruct in <span style="color:red"><span id="timer">5</span></span> seconds...</h2>
-<button id="defuser">Defuse the BOM</button>
+<h2 style="color: blue; text-align: center"; id="message";>This BOM will self destruct in <span style="color:red"><span id="timer">3</span></span> seconds, MacGruber...</h2>
+<div class="text-center"><button id="defuser">Defuse the BOM</button></div>
 
 <script>
     (function() {
         "use strict";
 
-        var detonationTimer = 5;
+        var detonationTimer = 3;
 
         // TODO: This function needs to be called once every second
         function updateTimer() {
             if (detonationTimer == 0) {
+                document.body.style.backgroundColor = "red";
                 alert('EXTERMINATE!');
-                document.body.innerHTML = '';
+                document.body.innerHTML = 'MACGRUBER!!';
             } else if (detonationTimer > 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
@@ -33,6 +36,9 @@
         function defuseTheBOM() {
             clearTimeout(interval);
             alert("You defused the BOM!")
+            document.body.style.backgroundColor = "green";
+            document.body.innerHTML = 'You did it!!';
+
         }
 
         // Don't modify anything below this line!
@@ -43,6 +49,7 @@
         var defuser = document.getElementById('defuser');
         defuser.addEventListener('click', defuseTheBOM);
     })();
+
 </script>
 </body>
 </html>
