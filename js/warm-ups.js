@@ -169,21 +169,36 @@
 // }
 // // print out the cat at index 1
 // console.log(getNthCat(myCats, 1));
+//
+// function reverseString(str) {
+//     var newString = "";
+//     for (var i = str.length - 1; i >= 0; i--) {
+//         newString += str[i];
+//     }
+//     return newString;
+// }
+// console.log(reverseString("hello"));
+// // OR
+//
+//
+// function reverseS (string){
+//     let newString = string.split("");
+//     newString.reverse("")
+//     return newString.join("")
+// }
+// console.log(reverseS("hello"));
 
-function reverseString(str) {
-    var newString = "";
-    for (var i = str.length - 1; i >= 0; i--) {
-        newString += str[i];
+
+// Write a function called findAverage that
+// takes in an array of integers representing
+// grades and returns the average.
+
+const grades= [90, 100, 95, 100];
+let sum = 0;
+function findAverage(grades){
+    for (let i = 0; i < grades.length; i++) {
+        sum += grades[i];
     }
-    return newString;
+    console.log(sum/grades.length);
 }
-console.log(reverseString("hello"));
-// OR
-
-
-function reverseS (string){
-    let newString = string.split("");
-    newString.reverse("")
-    return newString.join("")
-}
-console.log(reverseS("hello"));
+findAverage(grades);
