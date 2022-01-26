@@ -45,12 +45,16 @@
 
         // TODO: Set text color on every other list item to grey
         // listItems.style.color = "grey";
-        for (var i = 0; i < listItems.length; i+=2) {
+        for (let i = 0; i < listItems.length; i+=2) {
             listItems[i].style.color = 'grey';
         }
         // TODO: Set text color of li with dbid = 1 to blue
         //This line not working yet
-        document.getElementsByClassName('data-dbid="1"').style.color = "blue";
+        for (let i = 0; i < listItems.length; i++) {
+            if (listItems[i].dataset.dbid === "1") {
+                listItems[i].style.color = 'blue';
+            }
+        }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
