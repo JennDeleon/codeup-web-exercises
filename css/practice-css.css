@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px){
+    #jumbotron{
+        display: none;
+    }
+}
+.jumbotron {
+    background: url(../images/coffee.png) no-repeat;
+    background-size: cover;
+    /*background-image: inherit;*/
+}
+.bg-light {
+    opacity: 80%;
+}
+
+#navbar-nav {
+    color: #0A5E5B;
+}
+
