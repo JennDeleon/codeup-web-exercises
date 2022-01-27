@@ -193,12 +193,25 @@
 // takes in an array of integers representing
 // grades and returns the average.
 
-const grades= [90, 100, 95, 100];
-let sum = 0;
-function findAverage(grades){
-    for (let i = 0; i < grades.length; i++) {
-        sum += grades[i];
-    }
-    console.log(sum/grades.length);
+// const grades= [90, 100, 95, 100];
+// let sum = 0;
+// function findAverage(grades){
+//     for (let i = 0; i < grades.length; i++) {
+//         sum += grades[i];
+//     }
+//     console.log(sum/grades.length);
+// }
+// findAverage(grades);
+
+// morning JS warmup:
+//     write a function called sumOfSquares(a, b)
+// takes 2 parameters called a and b
+// returns the sum of the squares of a and b
+// i.e., (a to the power of 2) + (b to the power of 2)
+// e.g., console.log(sumOfSquares(2, 3));
+// will return 13
+
+function sumOfSquares(a, b) {
+    return (a * a) + (b * b);
 }
-findAverage(grades);
+console.log(sumOfSquares(2, 3));
