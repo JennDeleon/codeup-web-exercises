@@ -211,7 +211,32 @@
 // e.g., console.log(sumOfSquares(2, 3));
 // will return 13
 
-function sumOfSquares(a, b) {
-    return (a * a) + (b * b);
+// function sumOfSquares(a, b) {
+//     return (a * a) + (b * b);
+// }
+// console.log(sumOfSquares(2, 3));
+
+
+// Write a function called whichStringIsLonger() that takes two parameters
+// and returns one of 4 values:
+// returns "first" if the first string parameter is longer
+// returns "second" if the second parameter is longer
+// returns "neither" if they are the same length
+// returns false if either or both of the parameters are not strings
+
+function whichStringIsLonger(a, b) {
+    if (a.length > b.length) {
+        return "first"
+    } else if (b.length > a.length) {
+        return "second"
+    } else if (a.length === b.length) {
+        return "neither"
+    } else (typeof a !== "string" || typeof b !== "string"); {
+        return false
+    }
 }
-console.log(sumOfSquares(2, 3));
+console.log(whichStringIsLonger("bobby", "lou")); // returns first
+console.log(whichStringIsLonger("bob", "louise")); // returns second
+console.log(whichStringIsLonger("bob", "lou")); // returns neither
+console.log(whichStringIsLonger("bobby", 2)); // returns false
+console.log(whichStringIsLonger(1, "lou")); // returns false
