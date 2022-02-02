@@ -15,4 +15,12 @@
 #navbar-nav {
     color: #0A5E5B;
 }
+.hide {
+    display: none;
+}
+
+.myDIV:hover + .hide {
+    display: block;
+    color: red;
+}
 
