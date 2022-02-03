@@ -7,9 +7,41 @@
 </head>
 <body>
 <script>
-    $(document).ready(function() {
-    alert( 'The DOM has finished loading!' );
-});
+    $(document).ready(function () {
+        alert('The DOM has finished loading!');
+    });
 </script>
+<!-- h1, p, ul, li, div-->
+<div ID="done">
+    <h1 id="Hello">Hello</h1>
+    <p class="codeup">Codeup</p>
+    <ul>
+        <li>My name</li>
+        <li>is Jennifer</li>
+    </ul>
+    Thats it.
+</div>
+
+<script>
+    // $("h1").css("font-weight", "bolder");
+    // $("p").css("border", "solid red 1px")
+    $('li').css('font-size', '20px')
+    let done = $("#done");
+    console.log(done.html());
+
+    $(".codeup").html("<p>Elixir</p>");
+
+    $("h1, li, p").css('background-color', '#e74365');
+
+    $("h1").each(function (){
+        alert("Hello");
+    });
+
+
+
+    done.css('background-color', '#d7bdbe');
+
+</script>
+
 </body>
 </html>
