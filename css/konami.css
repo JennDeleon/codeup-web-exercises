@@ -1,10 +1,12 @@
 body {
+    display: flex;
     background-image: url('../images/NES.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: 100%;
     background-color: #333333;
+
 }
 h1{
     color: #e40100;
@@ -13,4 +15,13 @@ h1{
     font-size: 80px;
     text-shadow: 3px 3px black;
     padding-left: 1em;
+}
+#contra {
+   display: none;
+    height: 650px;
+    width: 900px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-right: 250px;
 }

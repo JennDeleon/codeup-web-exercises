@@ -8,29 +8,51 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
+<h1>Enter the Konami Code</h1>
 
-<h1>Konami Code</h1>
+<div id="contra" class="tenor-gif-embed" data-postid="22469922" data-share-method="host" data-aspect-ratio="1.20755" data-width="100%"><a href="https://tenor.com/view/contra-contra_3-snes-super-nintendo-shmup-gif-22469922">Contra Contra_3 GIF</a>from <a href="https://tenor.com/search/contra-gifs">Contra GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
+    $(document).keyup(function (event) {
         console.log(event.keyCode);
     });
     var code = {
-
-        37: 'left',
         38: 'up',
-        39: 'right',
         40: 'down',
+        37: 'left',
+        39: 'right',
         65: 'a',
         66: 'b',
         13: 'enter'
     };
-    var konami = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter'];
-    var start = 0;
-</script>
+    let konami = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter'];
+    let position = 0;
+    document.addEventListener('keyup', function (e) {
+        let key = code[e.keyCode];
+        let requiredKey = konami[position];
+        if (key === requiredKey) {
+            position++;
+            if (position === konami.length) {
+                const audio = new Audio("images/1-up.mp3");
+                audio.play();
+                // setTimeout(audio.bind(audio), 8000);
+                $("body").css('background-image', 'url(/images/oldtv.png');
+                $('h1').hide();
+                $("#contra").css("display", "flex");
 
+                position = 0
+            }
+        } else {
+            position = 0;
+        }
+
+    });
+
+
+</script>
+</div>
 </body>
 </html>
