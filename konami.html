@@ -10,7 +10,10 @@
 <body>
 <h1>Enter the Konami Code</h1>
 
-<div id="contra" class="tenor-gif-embed" data-postid="22469922" data-share-method="host" data-aspect-ratio="1.20755" data-width="100%"><a href="https://tenor.com/view/contra-contra_3-snes-super-nintendo-shmup-gif-22469922">Contra Contra_3 GIF</a>from <a href="https://tenor.com/search/contra-gifs">Contra GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div id="contra" class="tenor-gif-embed" data-postid="22469922" data-share-method="host" data-aspect-ratio="1.20755"
+     data-width="100%"><a href="https://tenor.com/view/contra-contra_3-snes-super-nintendo-shmup-gif-22469922">Contra
+    Contra_3 GIF</a>from <a href="https://tenor.com/search/contra-gifs">Contra GIFs</a></div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -38,20 +41,15 @@
             if (position === konami.length) {
                 const audio = new Audio("images/1-up.mp3");
                 audio.play();
-                // setTimeout(audio.bind(audio), 8000);
                 $("body").css('background-image', 'url(/images/oldtv.png');
                 $('h1').hide();
                 $("#contra").css("display", "flex");
-
                 position = 0
             }
         } else {
             position = 0;
         }
-
     });
-
-
 </script>
 </div>
 </body>
