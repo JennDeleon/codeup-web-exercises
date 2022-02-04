@@ -224,19 +224,34 @@
 // returns "neither" if they are the same length
 // returns false if either or both of the parameters are not strings
 
-function whichStringIsLonger(a, b) {
-    if (a.length > b.length) {
-        return "first"
-    } else if (b.length > a.length) {
-        return "second"
-    } else if (a.length === b.length) {
-        return "neither"
-    } else (typeof a !== "string" || typeof b !== "string"); {
-        return false
-    }
-}
-console.log(whichStringIsLonger("bobby", "lou")); // returns first
-console.log(whichStringIsLonger("bob", "louise")); // returns second
-console.log(whichStringIsLonger("bob", "lou")); // returns neither
-console.log(whichStringIsLonger("bobby", 2)); // returns false
-console.log(whichStringIsLonger(1, "lou")); // returns false
+// function whichStringIsLonger(a, b) {
+//     if (a.length > b.length) {
+//         return "first"
+//     } else if (b.length > a.length) {
+//         return "second"
+//     } else if (a.length === b.length) {
+//         return "neither"
+//     } else (typeof a !== "string" || typeof b !== "string"); {
+//         return false
+//     }
+// }
+// console.log(whichStringIsLonger("bobby", "lou")); // returns first
+// console.log(whichStringIsLonger("bob", "louise")); // returns second
+// console.log(whichStringIsLonger("bob", "lou")); // returns neither
+// console.log(whichStringIsLonger("bobby", 2)); // returns false
+// console.log(whichStringIsLonger(1, "lou")); // returns false
+
+// Write a function called convertLowHighToObject that takes in a string  that represents the low and high temperature in this format '35, 42' (assuming low will always be the left value and high the right) and returns an object with the properties 'low' and 'high' with the values of those respective properties set to the corresponding values in the input string.
+//     NOTE: the values in the object should be of the number type
+// Example input: '35, 42'
+// Example return: {low: 35, high: 42}
+
+
+// function convertLowHighToObject(str){
+//     let  lower = str.split(',');
+//     return {
+//         low: parseInt(lower[0]),
+//         high: parseInt(high[1])
+//     }
+// }
+// console.log(convertLowHighToObject('35, 42'));
