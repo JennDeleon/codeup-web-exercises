@@ -20,26 +20,41 @@
         <li>is Jennifer</li>
     </ul>
     Thats it.
+    <p>Another paragraph</p>
 </div>
 
 <script>
     // $("h1").css("font-weight", "bolder");
     // $("p").css("border", "solid red 1px")
-    $('li').css('font-size', '20px')
-    let done = $("#done");
-    console.log(done.html());
-
-    $(".codeup").html("<p>Elixir</p>");
-
-    $("h1, li, p").css('background-color', '#e74365');
-
-    $("h1").each(function (){
-        alert("Hello");
+    // $('li').css('font-size', '20px')
+    // let done = $("#done");
+    // console.log(done.html());
+    //
+    // $(".codeup").html("<p>Elixir</p>");
+    //
+    // $("h1, li, p").css('background-color', '#e74365');
+    //
+    // $("h1").each(function (){
+    //     alert("Hello");
+    // });
+    //
+    //
+    //
+    // done.css('background-color', '#d7bdbe');
+    $("h1").click(
+        function () {
+            $(this).css('background-color', 'purple');
+        });
+    $("p").dblclick(function () {
+        $(this).css('font-size', '18px');
     });
 
-
-
-    done.css('background-color', '#d7bdbe');
+    $('li').hover(function () {
+            $(this).css('color', 'red');
+        },
+        function () {
+            $(this).css('color', 'black');
+        });
 
 </script>
 
