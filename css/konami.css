@@ -1,0 +1,16 @@
+body {
+    background-image: url('../images/NES.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-color: #333333;
+}
+h1{
+    color: #e40100;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 80px;
+    text-shadow: 3px 3px black;
+    padding-left: 1em;
+}
