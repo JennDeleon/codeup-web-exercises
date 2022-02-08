@@ -6,64 +6,88 @@
     <script src="js/jquery-2.2.4.js"></script>
 
 </head>
-<body>
-<p>10 National Parks urban legends and scary facts</p>
+<body style="background-color: black">
+<h3>10 National Parks urban legends and scary facts</h3>
 
 <dl>
-    <dt>The Great Sand Dunes National Park</dt>
-    <dd>Over 60 UFO sitings, cow mutations and portals to another universe reported</dd>
-<br>
-    <dt>At Mammoth Cave National Park</dt>
-    <dd>Sounds of coughing from TB patients who perished at a nearby failed TB hospital</dd>
-    <br>
-
-    <dt>The Norton Creek Trail in the Great Smoky Mountains</dt>
-    <dd>Was home to a witch who'd disguise herself as an old woman, snatch children, and use her obsidian stone finger to cut out their livers, which she considered a delicacy.</dd>
-    <br>
-
     <dt>Grand Canyon National Park</dt>
     <dd>Serial Slayer Robert Spangler took his fourth life there</dd>
     <br>
-
+    <dt>The Great Sand Dunes National Park</dt>
+    <dd>Over 60 UFO sitings, cow mutations and portals to another universe reported</dd>
+    <br>
+    <dt>At Mammoth Cave National Park</dt>
+    <dd>Sounds of coughing from TB patients who perished at a nearby failed TB hospital</dd>
+    <br>
+    <dt>The Norton Creek Trail in the Great Smoky Mountains</dt>
+    <dd>Was home to a witch who'd disguise herself as an old woman, snatch children, and use her obsidian stone finger to cut out their livers, which she considered a delicacy.</dd>
+    <br>
     <dt>New Jersey Pinelands National Reserve</dt>
     <dd>The Jersey Devil can be heard screaming at night—though it’s much better to hear him than to see him. The creature is said to have the head of a dog, bat wings, horns and forked tail.</dd>
     <br>
-
     <dt>Grouse Lake in Yosemite National Park</dt>
     <dd>The cries of a Native American boy who drowned in the lake calls out to hikers for help</dd>
     <br>
-
     <dt>Gettysburg National Military Park</dt>
     <dd>A barefoot ghost known as the “Tennessean” or “The Hippie” will point toward the Plum Run stream and say, “What you’re looking for is over there,” before disappearing.</dd>
     <br>
-
     <dt>Crater Lake</dt>
     <dd>Many sightings of Sasquatch have been documented in the area.</dd>
     <br>
-
     <dt>Old Faithful in Yellowstone National Park</dt>
     <dd>A bride who was decapitated on her honeymoon now strolls around with her head tucked under her arm</dd>
     <br>
-
     <dt>Hawaii Volcanoes National Park</dt>
     <dd>Pele—the volcano goddess inflicts severe punishment on anyone who steals from her by taking souvenirs in the form of volcanic rocks.</dd>
     <br>
-
 </dl>
-<button type="button" class="button">Click Me!</button>
+<button type="button" class="button1">Click Me!</button>
 
-<p>https://www.mentalfloss.com/article/63311/10-national-parks-and-ghosts-and-monsters-who-supposedly-live-there</p>
+<h3>National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+</ul>
+<h3>State Parks of New Mexico</h3>
+<ul id="state-parks-newMexico">
+    <li>Bluewater Lake</li>
+    <li>Bottomless Lakes</li>
+    <li>Brantley Lake</li>
+    <li>Caballo Lake</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+</ul>
+<button type="button" class="button2">Click Me!</button>
+
+<p style="color: darkorange">https://www.mentalfloss.com/article/63311/10-national-parks-and-ghosts-and-monsters-who-supposedly-live-there</p>
 <style>
+    h3 {
+        color: white;
+    }
     .invisible {
         visibility: hidden;
-
+    }
+    li {
+        color: darkorange;
     }
     .appear {
+        padding-top: 15px;
         visibility: visible;
-        background-color: yellow;
+        color: darkred;
+        font-size: larger;
     }
     dt {
-        background-color: darkgray;
+        background-color: darkorange;
+        font-family: AppleGothic,serif;
+        font-weight: bolder;
+        padding: 10px;
     }
 
 </style>
@@ -72,6 +96,19 @@
 
     $( "button" ).click(function() {
         $('dd').toggleClass( "appear" );
+    });
+
+
+    function setToYellow(index, element){
+    $(element).children().firstChild.css("background-color", "yellow");
+    }
+    $("#button2").click(function(event) {
+        $(".national-parks").each(setToYellow);
+    });
+
+
+    $(".li").click(function (event){
+        $(this).parent().children().first().css("color", "blue");
     });
 
 </script>
