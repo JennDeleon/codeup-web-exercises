@@ -13,7 +13,7 @@
 </script>
 <!-- h1, p, ul, li, div-->
 <div ID="done">
-    <h1 id="Hello">Hello</h1>
+    <h1 id="hello">Hello</h1>
     <p class="codeup">Codeup</p>
     <ul>
         <li>My name</li>
@@ -34,9 +34,8 @@
     //
     // $("h1, li, p").css('background-color', '#e74365');
     //
-    // $("h1").each(function (){
-    //     alert("Hello");
-    // });
+    var h1Contents = $('#hello').html();
+    alert(h1Contents);
     //
     //
     //
