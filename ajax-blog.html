@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
-$END$
+<div id="post"></div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    (function () {
+        "use strict";
+        {
+            $.get("/data/blog.json").done(function (data, status) {
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i].title);
+                    let theBlog =
+                        "<div><h3>" + data[i].title + "</h3>" +
+                        "<p> " + data[i].content + " </p>" +
+                        "<p> " + data[i].categories + " </div></p>"
+
+                    $('#post').append(theBlog);
+                }
+            });
+        }
+    })();
+</script>
 </body>
 </html>
