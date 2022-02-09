@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="keys.js">
 
+    <script src="keys.js"></script>
     <meta charset="UTF-8">
-    <title>First Mapbox Map</title>
+    <title>My First Mapbox Map!</title>
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Custom CSS -->
     <style>
         #map {
-            /* the width and height may be set to any size */
             width: 100%;
             height: 700px;
+            border: solid black;
+            margin-left: 20%;
+        }
+
+        h1, h2{
+            font-family: 'Syne Tactile', cursive;
+            text-align: center;
+            color: #800020;
+
+        }
+        body {
+            background-color: antiquewhite;
         }
     </style>
 </head>
 <body>
-<h1>My First Mapbox Map!</h1>
+<h1>Kimura Ramen!</h1>
+<h2>Address: 1017 N Flores St, San Antonio, TX 78212</h2>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 600px; height: 450px;'></div>
+
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiamVubmlmZXJkZWxlb240MDQiLCJhIjoiY2t6ZWZkZWo0Mzc2NDJ3bmZ5NzllYjdvayJ9.nI08nj29ffs1wZua4VxMCw';
+    mapboxgl.accessToken = firstToken;
     const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/dark-v10\n', // style URL
-        center: [-98.491142, 29.424349], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10\n',
+        center: [-98.5007, 29.4353], // starting position [lng, lat]
+        zoom: 15 // starting zoom
     });
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.5007, 29.4353])
+        .addTo(map);
+
+
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat([-98.5007, 29.4353])
+        .setHTML("<p>Kimura Ramen</p>")
+        .addTo(map);
+
+    map.on('mouseenter', 'circle', () => {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
 </script>
 </body>
 </html>
