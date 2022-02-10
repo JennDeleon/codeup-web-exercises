@@ -3,18 +3,15 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="keys.js">
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
-    <script src="keys.js"></script>
     <meta charset="UTF-8">
     <title>My First Mapbox Map!</title>
     <!-- Mapbox CSS -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
     <!-- Custom CSS -->
+
     <style>
         #map {
             width: 100%;
@@ -29,6 +26,12 @@
             color: #800020;
 
         }
+
+        p {
+            text-align: center;
+            font-weight: bolder;
+            color: red;
+        }
         body {
             background-color: antiquewhite;
         }
@@ -42,25 +45,64 @@
         }
     </style>
 </head>
+                    <!--    start of body    -->
 <body>
 <h1>Kimura Ramen!</h1>
 <h2>Address: 1017 N Flores St, San Antonio, TX 78212</h2>
+<p>ATTENTION: As of January 2022, our location has changed!!
+<br> See map below to find us!</p>
 
 <div id='map' style='width: 600px; height: 450px;'></div>
 
 
+                        <!--   SCRIPT     -->
+<script src="js/jquery-2.2.4.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<script src="keys.js"></script>
+
+
 <script>
+(function () {
+    "use strict";
+
+
     mapboxgl.accessToken = firstToken;
     const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10\n',
+        style: 'mapbox://styles/mapbox/dark-v10',
         center: [-98.5007, 29.4353], // starting position [lng, lat]
         zoom: 15 // starting zoom
     });
-    var marker = new mapboxgl.Marker()
-        .setLngLat([-98.5007, 29.4353])
-        .addTo(map);
 
+    let marker;
+
+    $(document).ready(function () {
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([-98.5007, 29.4353])
+            .addTo(map);
+
+            // marker.on('dragend', endOfMarkerDrag);
+
+    });
+
+    // function endOfMarkerDrag (){
+    //     const coords = marker.setLngLat();
+    //     console.log(coords);
+    //     makePopup(coords);
+    // }
+    //
+    // function makePopup(coords){
+    //     const coordArray = [coords.lng, coords.lat];
+    //     const popup = new mapboxgl.Popup({closeOnClick: false})
+    //         .setLngLat(coordArray)
+    //         .setHTML("<p>Kimura Ramen</p>");
+    //         marker.setPopup(popup);
+    //         popup.addTo(map);
+    //
+    // }
 
     map.addControl(
         new MapboxGeocoder({
@@ -68,6 +110,7 @@
             mapboxgl: mapboxgl
         })
     );
+    //
 
     var popup = new mapboxgl.Popup()
         .setLngLat([-98.5007, 29.4353])
@@ -77,7 +120,7 @@
     map.on('mouseenter', 'circle', () => {
         map.getCanvas().style.cursor = 'pointer';
     });
-
+})();
 
 </script>
 </body>

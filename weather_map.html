@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="keys.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<script>
+    // $(document).ready(function() {
+    // $.get("http://api.openweathermap.org/data/2.5/weather", {
+    //     APPID: weatherKey,
+    //     q:     "San Antonio, US"
+    // }).done(function (data){
+    //     console.log(data);
+    //
+    // })});
+    $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=29.4241&lon=-98.4936&exclude=hourly,minutely&appid=${OPENWEATHER_KEY}&units=imperial`)
+        .done(function (data) {
+            console.log(data);
+        });
+
+</script>
+</body>
+</html>
