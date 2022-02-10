@@ -104,13 +104,15 @@
     //
     // }
 
+    // I need to look at this a little closer, the above code does not display what its supposed to
+
     map.addControl(
         new MapboxGeocoder({
             accessToken: firstToken,
             mapboxgl: mapboxgl
         })
     );
-    //
+
 
     var popup = new mapboxgl.Popup()
         .setLngLat([-98.5007, 29.4353])
