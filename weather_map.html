@@ -15,15 +15,64 @@
     <link rel="stylesheet"
           href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
           type="text/css">
+    <script src="https://kit.fontawesome.com/4cdf7e2310.js" crossorigin="anonymous"></script>
     <!-- Custom CSS -->
-
     <style>
+        @media only screen and (max-width: 650px) {
+
+            table {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 90%;
+                background-color: #f1f2f1 !important;
+                display: none;
+            }
+
+            h1 {
+                color: #ffbf00 !important;
+                background-color: #7cb342;
+                text-shadow: 1px 1px lightgray;
+            }
+
+            form.search input[type=text] {
+                padding: 10px;
+                font-size: 17px;
+                border: 1px solid grey;
+                float: left;
+                width: 80%;
+                background: #f1f1f1;
+            }
+
+            form.search button {
+                float: left;
+                width: 20%;
+                padding: 10px;
+                background: #7cb342;
+                color: white;
+                font-size: 17px;
+                border: 1px solid grey;
+                cursor: pointer;
+            }
+
+            form.search button:hover {
+                background: #7cb342;
+            }
+
+
+
+            #mobile-weather {
+
+                height: 500px;
+                border: 1px solid #000;
+            }
+
+        }
+
         table {
             margin-left: auto;
             margin-right: auto;
             max-width: 90%;
-            background-color: #f1f2f1;
-
+            background-color: #f1f2f1 !important;
         }
 
         .one, th {
@@ -46,7 +95,6 @@
             height: 80px;
         }
 
-
         #map {
             width: 100%;
             height: 700px;
@@ -54,21 +102,31 @@
             margin-left: 20%;
             margin-top: 3em;
         }
+
         #rain {
             height: 5em;
         }
-
-
     </style>
 </head>
-
 <!--       BODY      -->
 <body>
-
 <h1><img src=images/cody.png alt="rubber-duck">Cody's weather report!</h1>
+<div class="d-block d-md-none">
+    <form class="search">
+        <input id="input" type="text" placeholder="Search.." name="search">
+        <button type="submit" id="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
 
-<table class="table table-sm ">
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather">
+        <div class="column-12">
+        </div>
+    </div>
+</div>
 
+
+<table class="table">
     <thead>
     <tr>
         <th scope="col"></th>
@@ -114,10 +172,7 @@
     </tr>
     </tbody>
 </table>
-
-
-<div id='map' style='width: 600px; height: 450px;'></div>
-
+<div id='map' style='width: 600px; height: 450px;' class="d-none d-md-block d-lg-block d-xl-block"></div>
 <script src="js/jquery-2.2.4.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
@@ -126,9 +181,9 @@
     function color(element, description) {
         if (description === 'clear sky') {
             element.css('color', 'green');
-        } else if (description === 'light rain') {
+        } else if (description === 'light rain' || description === 'rain') {
             element.css('color', 'blue');
-        } else if (description === 'cloudy' || description === 'few clouds' || description === 'clouds' || description === 'cloudsovercast') {
+        } else if (description === 'cloudy' || description === 'few clouds' || description === 'clouds' || description === 'overcast clouds') {
             element.css('color', '#5a7f9c');
         } else if (description === 'snow' || description === 'light snow') {
             element.css('color', 'red');
@@ -143,45 +198,43 @@
             units: "imperial"
         }).done(function (data) {
             console.log('The entire response:', data);
-
+            // ************************ try to find a way to make this into a loop
             // max
-            $('#sunday').append(Math.round(data.daily[0].temp.max));
-            $('#monday').append(Math.round(data.daily[1].temp.max));
-            $('#tuesday').append(Math.round(data.daily[2].temp.max));
-            $('#wednesday').append(Math.round(data.daily[3].temp.max));
-            $('#thursday').append(Math.round(data.daily[4].temp.max));
-            $('#friday').append(Math.round(data.daily[5].temp.max));
-            $('#saturday').append(Math.round(data.daily[6].temp.max));
-
+            $('#sunday').empty().append(Math.round(data.daily[0].temp.max));
+            $('#monday').empty().append(Math.round(data.daily[1].temp.max));
+            $('#tuesday').empty().append(Math.round(data.daily[2].temp.max));
+            $('#wednesday').empty().append(Math.round(data.daily[3].temp.max));
+            $('#thursday').empty().append(Math.round(data.daily[4].temp.max));
+            $('#friday').empty().append(Math.round(data.daily[5].temp.max));
+            $('#saturday').empty().append(Math.round(data.daily[6].temp.max));
             // min
-            $('#sundayTwo').append(Math.round(data.daily[0].temp.min));
-            $('#mondayTwo').append(Math.round(data.daily[1].temp.min));
-            $('#tuesdayTwo').append(Math.round(data.daily[2].temp.min));
-            $('#wednesdayTwo').append(Math.round(data.daily[3].temp.min));
-            $('#thursdayTwo').append(Math.round(data.daily[4].temp.min));
-            $('#fridayTwo').append(Math.round(data.daily[5].temp.min));
-            $('#saturdayTwo').append(Math.round(data.daily[6].temp.min));
-
+            $('#sundayTwo').empty().append(Math.round(data.daily[0].temp.min));
+            $('#mondayTwo').empty().append(Math.round(data.daily[1].temp.min));
+            $('#tuesdayTwo').empty().append(Math.round(data.daily[2].temp.min));
+            $('#wednesdayTwo').empty().append(Math.round(data.daily[3].temp.min));
+            $('#thursdayTwo').empty().append(Math.round(data.daily[4].temp.min));
+            $('#fridayTwo').empty().append(Math.round(data.daily[5].temp.min));
+            $('#saturdayTwo').empty().append(Math.round(data.daily[6].temp.min));
             //weather
-            $('#sundayThree').append(data.daily[0].weather[0].description);
+            $('#sundayThree').empty().append(data.daily[0].weather[0].description);
             color($('#sundayThree'), data.daily[0].weather[0].description);
-            $('#mondayThree').append(data.daily[1].weather[0].description);
+            $('#mondayThree').empty().append(data.daily[1].weather[0].description);
             color($('#mondayThree'), data.daily[1].weather[0].description);
-            $('#tuesdayThree').append(data.daily[2].weather[0].description);
+            $('#tuesdayThree').empty().append(data.daily[2].weather[0].description);
             color($('#tuesdayThree'), data.daily[2].weather[0].description);
-            $('#wednesdayThree').append(data.daily[3].weather[0].description);
+            $('#wednesdayThree').empty().append(data.daily[3].weather[0].description);
             color($('#wednesdayThree'), data.daily[3].weather[0].description);
-            $('#thursdayThree').append(data.daily[4].weather[0].description);
+            $('#thursdayThree').empty().append(data.daily[4].weather[0].description);
             color($('#thursdayThree'), data.daily[4].weather[0].description);
-            $('#fridayThree').append(data.daily[5].weather[0].description);
+            $('#fridayThree').empty().append(data.daily[5].weather[0].description);
             color($('#fridayThree'), data.daily[5].weather[0].description);
-            $('#saturdayThree').append(data.daily[6].weather[0].description);
+            $('#saturdayThree').empty().append(data.daily[6].weather[0].description);
             color($('#saturdayThree'), data.daily[6].weather[0].description);
-
-
             console.log('The entire response:', data);
         });
     }
+
+    //                        ^^^^^^^^^^^^^    try to find a way to make this into a loop
     (function () {
         "use strict";
 
@@ -210,16 +263,11 @@
         map.addControl(
             geocoder
         );
-
-
-
-
         map.on('mouseenter', 'circle', () => {
             map.getCanvas().style.cursor = 'pointer';
         });
 
-
-        function geocode(search, token = OPENWEATHER_KEY) {
+        function geocode(search, token = firstToken) {
             var baseUrl = 'https://api.mapbox.com';
             var endPoint = '/geocoding/v5/mapbox.places/';
             return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
@@ -227,9 +275,20 @@
                     return res.json();
                 }).then(function (data) {
                     let [lon, lat] = data.features[0].center;
-                    getWeatherData(lon, lat)
+                    getWeather(lon, lat)
                 });
         }
+
+        //    mobile
+        function search(e) {
+            e.preventDefault()
+            var userInputElement = document.querySelector('#input');
+            userInputElement.value.toLowerCase();
+            geocode(userInputElement.value, firstToken)
+        }
+
+        let searchLocation = document.querySelector('#submit');
+        searchLocation.addEventListener('click', search);
 
 
     })();
