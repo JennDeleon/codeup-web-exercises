@@ -19,7 +19,6 @@
     <!-- Custom CSS -->
     <style>
         @media only screen and (max-width: 650px) {
-
             table {
                 margin-left: auto;
                 margin-right: auto;
@@ -28,10 +27,17 @@
                 display: none;
             }
 
-            h1 {
+            h1, h2 {
+                font-family: 'VT323', monospace;
                 color: #ffbf00 !important;
                 background-color: #7cb342;
                 text-shadow: 1px 1px lightgray;
+                text-align: center;
+            }
+
+            img {
+                width: 100px;
+                height: 80px;
             }
 
             form.search input[type=text] {
@@ -41,6 +47,10 @@
                 float: left;
                 width: 80%;
                 background: #f1f1f1;
+            }
+
+            .current-mobile {
+                color: dimgray;
             }
 
             form.search button {
@@ -55,77 +65,244 @@
             }
 
             form.search button:hover {
-                background: #7cb342;
+                background: #5f8a32;
             }
 
-
-
-            #mobile-weather {
-
+            #mobile-weather0, #mobile-weather1, #mobile-weather2, #mobile-weather3, #weather-card4, #weather-card5, #weather-card6 {
                 height: 500px;
-                border: 1px solid #000;
+                /*border: 1px solid #000;*/
             }
 
+            #weather-card0, #weather-card1, #weather-card2, #weather-card3, #weather-card4, #weather-card5, #weather-card6 {
+                width: 100%;
+            }
+            .high, .low, .wind, .rain {
+                color: #ffbf00;
+            }
         }
 
-        table {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 90%;
-            background-color: #f1f2f1 !important;
+        @media only screen and (min-width: 651px) {
+            table {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 90%;
+                background-color: #f1f2f1 !important;
+            }
+
+            .one, th {
+                color: #ffbf00;
+                text-shadow: 1px 1px lightgray;
+            }
+
+            th {
+                color: #7cb342;
+            }
+
+            h1, h2 {
+                font-family: 'VT323', monospace;
+                color: #7cb342;
+                text-align: center;
+            }
+
+            img {
+                width: 100px;
+                height: 80px;
+            }
+
+            #map {
+                width: 50%;
+                height: 400px;
+                border: solid #ffbf00;
+                margin-left: 20%;
+                margin-top: 3em;
+            }
+
+            #weather {
+                height: 5em;
+            }
+
+            #mobile-weather0, #mobile-weather1, #mobile-weather2, #mobile-weather3, #mobile-weather4, #mobile-weather5, #mobile-weather6 {
+                display: none;
+            }
         }
 
-        .one, th {
-            color: #ffbf00;
-            text-shadow: 1px 1px lightgray;
-        }
-
-        th {
-            color: #7cb342;
-        }
-
-        h1, h2 {
-            font-family: 'VT323', monospace;
-            color: #7cb342;
-            text-align: center;
-        }
-
-        img {
-            width: 100px;
-            height: 80px;
-        }
-
-        #map {
-            width: 100%;
-            height: 700px;
-            border: solid #ffbf00;
-            margin-left: 20%;
-            margin-top: 3em;
-        }
-
-        #rain {
-            height: 5em;
-        }
     </style>
 </head>
 <!--       BODY      -->
 <body>
 <h1><img src=images/cody.png alt="rubber-duck">Cody's weather report!</h1>
-<div class="d-block d-md-none">
-    <form class="search">
-        <input id="input" type="text" placeholder="Search.." name="search">
-        <button type="submit" id="submit"><i class="fa fa-search"></i></button>
-    </form>
-</div>
-
 <div class="container">
-    <div class="row align-items-center" id="mobile-weather">
+    <div class="row align-items-center">
         <div class="column-12">
+            <div class="d-block d-md-none">
+                <form class="search">
+                    <input id="input" type="text" placeholder="Search.." name="search">
+                    <button type="submit" id="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
-
+<!-- mobile card 0-->
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather0">
+        <div id="weather-card0" class="column-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    DAY
+                </div>
+                <div class="card-body">
+                    <p class="current-mobile">Current</p>
+                    <p id="current-mobile0"></p>
+                    <h5 class="card-title" id="weather-mobile0">WEATHER</h5>
+                    <p class="icon">ICON</p>
+                </div>
+                <p class="high">HIGH</p>
+                <div class="card-footer" id="high-mobile0">
+                </div>
+                <p class="low">LOW</p>
+                <div class="card-footer" id="low-mobile0">
+                </div>
+                <p class="wind">WIND SPEED</p>
+                <div class="card-footer" id="wind-mobile0">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile card one-->
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather1">
+        <div id="weather-card1" class="column-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    DAY
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="weather-mobile1">WEATHER</h5>
+                    <p class="icon">ICON</p>
+                </div>
+                <p class="high">HIGH</p>
+                <div class="card-footer">
+                    <div id="high-mobile1"></div>
+                </div>
+                <p class="low">LOW</p>
+                <div class="card-footer" id="low-mobile1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile card two-->
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather2">
+        <div id="weather-card2" class="column-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    DAY
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="weather-mobile2">WEATHER</h5>
+                    <p class="icon">ICON</p>
+                </div>
+                <p class="high">HIGH</p>
+                <div class="card-footer" id="high-mobile2">
+                </div>
+                <p class="low">LOW</p>
+                <div class="card-footer" id="low-mobile2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile card three-->
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather3">
+        <div id="weather-card3" class="column-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    DAY
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="weather-mobile3">WEATHER</h5>
+                    <p class="icon">ICON</p>
+                </div>
+                <p class="high">HIGH</p>
+                <div class="card-footer" id="high-mobile3">
+                </div>
+                <p class="low">LOW</p>
+                <div class="card-footer low-mobile3" id="low-mobile3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile card four-->
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather4">
+        <div id="weather-card4" class="column-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    DAY
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="weather-mobile4">WEATHER</h5>
+                    <p class="icon">ICON</p>
+                </div>
+                <p class="high">HIGH</p>
+                <div class="card-footer" id="high-mobile4">
+                </div>
+                <p class="low">LOW</p>
+                <div class="card-footer" id="low-mobile4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile card five-->
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather5">
+        <div id="weather-card5" class="column-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    DAY
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="weather-mobile5">WEATHER</h5>
+                    <p class="icon">ICON</p>
+                </div>
+                <p class="high">HIGH</p>
+                <div class="card-footer" id="high-mobile5">
+                </div>
+                <p class="low">LOW</p>
+                <div class="card-footer low-mobile5" id="low-mobile5">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile card six-->
+<div class="container">
+    <div class="row align-items-center" id="mobile-weather6">
+        <div id="weather-card6" class="column-12">
+            <div class="card text-center">
+                <div class="card-header">
+                    DAY
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="weather-mobile6">WEATHER</h5>
+                    <p class="icon">ICON</p>
+                </div>
+                <p class="high">HIGH</p>
+                <div class="card-footer" id="high-mobile6">
+                </div>
+                <p class="low">LOW</p>
+                <div class="card-footer" id="low-mobile6">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <table class="table">
     <thead>
     <tr>
@@ -161,7 +338,7 @@
         <td id="saturdayTwo"></td>
     </tr>
     <tr>
-        <td id="rain" class="one">Weather</td>
+        <td id="weather" class="one">Weather</td>
         <td id="sundayThree"></td>
         <td id="mondayThree"></td>
         <td id="tuesdayThree"></td>
@@ -172,7 +349,9 @@
     </tr>
     </tbody>
 </table>
-<div id='map' style='width: 600px; height: 450px;' class="d-none d-md-block d-lg-block d-xl-block"></div>
+
+<div id='map' class="d-none d-md-block d-lg-block d-xl-block"></div>
+
 <script src="js/jquery-2.2.4.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
@@ -198,7 +377,9 @@
             units: "imperial"
         }).done(function (data) {
             console.log('The entire response:', data);
-            // ************************ try to find a way to make this into a loop
+            //current
+            $('#current-mobile0').empty().append(Math.round(data.current.temp));
+
             // max
             $('#sunday').empty().append(Math.round(data.daily[0].temp.max));
             $('#monday').empty().append(Math.round(data.daily[1].temp.max));
@@ -207,6 +388,14 @@
             $('#thursday').empty().append(Math.round(data.daily[4].temp.max));
             $('#friday').empty().append(Math.round(data.daily[5].temp.max));
             $('#saturday').empty().append(Math.round(data.daily[6].temp.max));
+            //mobile max
+            $('#high-mobile0').empty().append(Math.round(data.daily[0].temp.max));
+            $('#high-mobile1').empty().append(Math.round(data.daily[1].temp.max));
+            $('#high-mobile2').empty().append(Math.round(data.daily[2].temp.max));
+            $('#high-mobile3').empty().append(Math.round(data.daily[3].temp.max));
+            $('#high-mobile4').empty().append(Math.round(data.daily[4].temp.max));
+            $('#high-mobile5').empty().append(Math.round(data.daily[5].temp.max));
+            $('#high-mobile6').empty().append(Math.round(data.daily[6].temp.max));
             // min
             $('#sundayTwo').empty().append(Math.round(data.daily[0].temp.min));
             $('#mondayTwo').empty().append(Math.round(data.daily[1].temp.min));
@@ -215,6 +404,20 @@
             $('#thursdayTwo').empty().append(Math.round(data.daily[4].temp.min));
             $('#fridayTwo').empty().append(Math.round(data.daily[5].temp.min));
             $('#saturdayTwo').empty().append(Math.round(data.daily[6].temp.min));
+            // mobile min
+            $('#low-mobile0').empty().append(Math.round(data.daily[0].temp.min));
+            $('#low-mobile1').empty().append(Math.round(data.daily[1].temp.min));
+            $('#low-mobile2').empty().append(Math.round(data.daily[2].temp.min));
+            $('#low-mobile3').empty().append(Math.round(data.daily[3].temp.min));
+            $('#low-mobile4').empty().append(Math.round(data.daily[4].temp.min));
+            $('#low-mobile5').empty().append(Math.round(data.daily[5].temp.min));
+            $('#low-mobile6').empty().append(Math.round(data.daily[6].temp.min));
+            // mobile wind IS THIS ONE WORKING??
+            $('#wind-mobile0').empty().append(Math.round(data.wind_speed));
+
+
+
+
             //weather
             $('#sundayThree').empty().append(data.daily[0].weather[0].description);
             color($('#sundayThree'), data.daily[0].weather[0].description);
@@ -231,15 +434,28 @@
             $('#saturdayThree').empty().append(data.daily[6].weather[0].description);
             color($('#saturdayThree'), data.daily[6].weather[0].description);
             console.log('The entire response:', data);
+            //    weather mobile
+            $('#weather-mobile0').empty().append(data.daily[0].weather[0].description);
+            color($('#weather-mobile0'), data.daily[0].weather[0].description);
+            $('#weather-mobile1').empty().append(data.daily[1].weather[0].description);
+            color($('#weather-mobile1'), data.daily[1].weather[0].description);
+            $('#weather-mobile2').empty().append(data.daily[2].weather[0].description);
+            color($('#weather-mobile2'), data.daily[2].weather[0].description);
+            $('#weather-mobile3').empty().append(data.daily[3].weather[0].description);
+            color($('#weather-mobile3'), data.daily[3].weather[0].description);
+            $('#weather-mobile4').empty().append(data.daily[4].weather[0].description);
+            color($('#weather-mobile4'), data.daily[4].weather[0].description);
+            $('#weather-mobile5').empty().append(data.daily[5].weather[0].description);
+            color($('#weather-mobile5'), data.daily[5].weather[0].description);
+            $('#weather-mobile6').empty().append(data.daily[6].weather[0].description);
+            color($('#weather-mobile6'), data.daily[6].weather[0].description);
+            console.log('The entire response:', data);
         });
     }
 
-    //                        ^^^^^^^^^^^^^    try to find a way to make this into a loop
     (function () {
         "use strict";
-
         getWeather(-98.7068, 29.5696);
-
         mapboxgl.accessToken = firstToken;
         const map = new mapboxgl.Map({
             container: 'map',
@@ -253,13 +469,11 @@
             mapboxgl: mapboxgl,
             zoom: 12
         })
-
         geocoder.on('result', (event) => {
             var lng = event.result.center[0]
             var lat = event.result.center[1]
             getWeather(lng, lat)
         });
-
         map.addControl(
             geocoder
         );
