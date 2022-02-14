@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/weather_map.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -19,7 +17,6 @@
           href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
           type="text/css">
     <script src="https://kit.fontawesome.com/4cdf7e2310.js" crossorigin="anonymous"></script>
-
 </head>
 <!--       BODY      -->
 <body>
@@ -36,10 +33,8 @@
         </div>
     </div>
 </div>
-<label class="switch">
-    <input type="checkbox">
-    <span class="slider round"></span>
-</label>
+<button class="mode" onclick="myFunction()">dark mode</button>
+<br>
 <!-- mobile card 0-->
 <div class="container card0">
     <div class="row align-items-center" id="mobile-weather0">
@@ -199,33 +194,6 @@
         </div>
     </div>
 </div>
-
-<!--carousel-->
-<!--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">-->
-<!--    <div class="carousel-inner">-->
-<!--        <div class="carousel-item active">-->
-<!--            <img class="d-block w-100" src="..." alt="First slide">-->
-<!--        </div>-->
-<!--        <div class="carousel-item">-->
-<!--            <img class="d-block w-100" src="..." alt="Second slide">-->
-<!--        </div>-->
-<!--        <div class="carousel-item">-->
-<!--            <img class="d-block w-100" src="..." alt="Third slide">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">-->
-<!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--        <span class="sr-only">Previous</span>-->
-<!--    </a>-->
-<!--    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">-->
-<!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--        <span class="sr-only">Next</span>-->
-<!--    </a>-->
-<!--</div>-->
-<!--carousel-->
-
-
-
 <table class="table">
     <thead>
     <tr>
@@ -272,26 +240,27 @@
     </tr>
     </tbody>
 </table>
-
 <div id='map' class="d-none d-md-block d-lg-block d-xl-block"></div>
-
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="keys.js"></script>
 <script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
     function color(element, description) {
         if (description === 'clear sky') {
             element.css('color', 'green');
         } else if (description === 'light rain' || description === 'rain') {
             element.css('color', 'blue');
-        } else if (description === 'cloudy' || description === 'few clouds' || description === 'clouds' || description === 'overcast clouds') {
+        } else if (description === 'cloudy' || description === 'few clouds' || description === 'clouds' || description === 'overcast clouds' || description === 'broken clouds') {
             element.css('color', '#5a7f9c');
         } else if (description === 'snow' || description === 'light snow') {
             element.css('color', 'red');
         }
     }
-
     function getWeather(lng, lat) {
         $.get("http://api.openweathermap.org/data/2.5/onecall", {
             APPID: OPENWEATHER_KEY,
@@ -302,11 +271,6 @@
             console.log('The entire response:', data);
             //current
             $('.current-mobile').empty().append(Math.round(data.current.temp));
-
-
-            //
-
-            // $('#day0').html("help");
 
             // max
             $('#sunday').empty().append(Math.round(data.daily[0].temp.max));
@@ -427,20 +391,16 @@
 
         let searchLocation = document.querySelector('#submit');
         searchLocation.addEventListener('click', search);
-
         // days of week
         const dayOfWeekDigit = new Date().getDay();
         console.log(dayOfWeekDigit); //  0
-
         const dayOfWeekName = new Date().toLocaleString(
             'default', {weekday: 'long'}
         );
 
-
         $('#day0').empty().append(dayOfWeekName);
 
     })();
-
 </script>
 </body>
 </html>
