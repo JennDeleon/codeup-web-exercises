@@ -191,7 +191,7 @@
         </div>
     </div>
 </div>
-<table class="table">
+<table class="table table-dark">
     <thead>
     <tr>
         <th scope="col"></th>
@@ -241,7 +241,7 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
 <script src="js/jquery-2.2.4.js"></script>
-<script src="keys.js"></script>
+<script src="js/keys.js"></script>
 <script>
     function myFunction() {
         var element = document.body;
@@ -251,7 +251,7 @@
         if (description === 'clear sky') {
             element.css('color', 'green');
         } else if (description === 'light rain' || description === 'rain') {
-            element.css('color', 'blue');
+            element.css('color', '#00FFFF');
         } else if (description === 'cloudy' || description === 'few clouds' || description === 'clouds' || description === 'overcast clouds' || description === 'broken clouds') {
             element.css('color', '#5a7f9c');
         } else if (description === 'snow' || description === 'light snow' || description === 'heavy intensity rain') {
@@ -338,21 +338,19 @@
             color($('#weather-mobile6'), data.daily[6].weather[0].description);
 
 
-            $('#high-mobile0').empty().append(Math.round(data.daily[0].temp.max));
-
+            // $('#high-mobile0').empty().append(Math.round(data.daily[0].temp.max));
 
             //loop for days of the week
             for(let i = 0; i < 7; i++) {
                 let date = new Date(data.daily[i].dt * 1000);
                 let day = date.toLocaleString('default', {weekday: 'long', day: 'numeric', month: 'long'});
-                $("#day" + date.getDay()).append(day);
+                $("#day" + date.getDay()).empty().append(day);
 
                 let iconcode = data.daily[i].weather[0].icon;
                 let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
                 $('#wicon' + date.getDay()).attr('src', iconurl);
 
-                high = parseInt(data.daily[i].temp.max);
-
+                // high = parseInt(data.daily[i].temp.max);
 
                 // // $('#high-mobile') .empty().append(Math.round(data.daily[i].temp.max));
                 //
@@ -362,7 +360,6 @@
                 // $('#weather-mobile').empty().append(data.daily[i].weather[0].description);
 
             }
-
 
         });
     }
@@ -416,8 +413,6 @@
             .addTo(map);
         marker.on('dragend', endOfMarkerDrag);
 
-
-
         //    mobile search
         function search(e) {
             e.preventDefault()
@@ -426,13 +421,8 @@
             geocode(userInputElement.value, firstToken)
         }
 
-
-
         let searchLocation = document.querySelector('#submit');
         searchLocation.addEventListener('click', search);
-
-
-
 
 
     })();
