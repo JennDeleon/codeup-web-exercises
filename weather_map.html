@@ -254,7 +254,7 @@
             element.css('color', 'blue');
         } else if (description === 'cloudy' || description === 'few clouds' || description === 'clouds' || description === 'overcast clouds' || description === 'broken clouds') {
             element.css('color', '#5a7f9c');
-        } else if (description === 'snow' || description === 'light snow') {
+        } else if (description === 'snow' || description === 'light snow' || description === 'heavy intensity rain') {
             element.css('color', 'red');
         }
     }
@@ -336,10 +336,10 @@
             color($('#weather-mobile5'), data.daily[5].weather[0].description);
             $('#weather-mobile6').empty().append(data.daily[6].weather[0].description);
             color($('#weather-mobile6'), data.daily[6].weather[0].description);
-            // icons
-            // var iconcode = data.daily[0].weather[0].icon;
-            // var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-            // $('#wicon').attr('src', iconurl);
+
+
+            $('#high-mobile0').empty().append(Math.round(data.daily[0].temp.max));
+
 
             //loop for days of the week
             for(let i = 0; i < 7; i++) {
@@ -350,6 +350,17 @@
                 let iconcode = data.daily[i].weather[0].icon;
                 let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
                 $('#wicon' + date.getDay()).attr('src', iconurl);
+
+                high = parseInt(data.daily[i].temp.max);
+
+
+                // // $('#high-mobile') .empty().append(Math.round(data.daily[i].temp.max));
+                //
+                // let round = (Math.round(data.daily[i].temp.max));
+                //
+                //
+                // $('#weather-mobile').empty().append(data.daily[i].weather[0].description);
+
             }
 
 
@@ -395,14 +406,27 @@
                     getWeather(lon, lat)
                 });
         }
+        const latLang = [-98.7068, 29.5696];
+        function endOfMarkerDrag() {
+            const cord = marker.getLngLat();
+        }
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        }).setLngLat(latLang)
+            .addTo(map);
+        marker.on('dragend', endOfMarkerDrag);
 
-        //    mobile
+
+
+        //    mobile search
         function search(e) {
             e.preventDefault()
             var userInputElement = document.querySelector('#input');
             userInputElement.value.toLowerCase();
             geocode(userInputElement.value, firstToken)
         }
+
+
 
         let searchLocation = document.querySelector('#submit');
         searchLocation.addEventListener('click', search);
