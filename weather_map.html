@@ -20,7 +20,7 @@
 </head>
 <!--       BODY      -->
 <body>
-<h1><img src=images/cody.png alt="rubber-duck">Cody's weather report!</h1>
+<h1><img class="duck" src=images/cody.png alt="rubber-duck">Cody's weather report!</h1>
 <div class="container">
     <div class="row align-items-center">
         <div class="column-12">
@@ -33,21 +33,24 @@
         </div>
     </div>
 </div>
-<button class="mode" onclick="myFunction()">dark mode</button>
-<br>
+<div>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round mode" onclick="myFunction()" ></span>
+    </label>
+</div>
 <!-- mobile card 0-->
 <div class="container card0">
     <div class="row align-items-center" id="mobile-weather0">
         <div id="weather-card0" class="column-12">
             <div class="card text-center">
                 <div class="card-header" id= "day0">
-
                 </div>
                 <div class="card-body">
                     <p class="current-mobile">Current</p>
                     <p id="current-mobile0"></p>
                     <h5 class="card-title" id="weather-mobile0">WEATHER</h5>
-                    <p class="icon">ICON</p>
+                    <div id="icon0"><img id="wicon0" src="" alt="Weather icon"></div>
                 </div>
                 <div class="card-footer">
                     <p class="high">HIGH</p>
@@ -68,12 +71,11 @@
     <div class="row align-items-center" id="mobile-weather1">
         <div id="weather-card1" class="column-12">
             <div class="card text-center">
-                <div class="card-header">
-                    DAY
+                <div class="card-header" id="day1">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="weather-mobile1">WEATHER</h5>
-                    <p class="icon">ICON</p>
+                    <div id="icon1"><img id="wicon1" src="" alt="Weather icon"></div>
                 </div>
                 <div class="card-footer">
                     <p class="high">HIGH</p>
@@ -91,12 +93,11 @@
     <div class="row align-items-center" id="mobile-weather2">
         <div id="weather-card2" class="column-12">
             <div class="card text-center">
-                <div class="card-header">
-                    DAY
+                <div class="card-header" id="day2">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="weather-mobile2">WEATHER</h5>
-                    <p class="icon">ICON</p>
+                    <div id="icon2"><img id="wicon2" src="" alt="Weather icon"></div>
                 </div>
 
                 <div class="card-footer"><p class="high">HIGH</p><div id="high-mobile2"></div>
@@ -113,12 +114,11 @@
     <div class="row align-items-center" id="mobile-weather3">
         <div id="weather-card3" class="column-12">
             <div class="card text-center">
-                <div class="card-header">
-                    DAY
+                <div class="card-header" id="day3">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="weather-mobile3">WEATHER</h5>
-                    <p class="icon">ICON</p>
+                    <div id="icon3"><img id="wicon3" src="" alt="Weather icon"></div>
                 </div>
 
                 <div class="card-footer"><p class="high">HIGH</p><div id="high-mobile3"></div>
@@ -135,12 +135,11 @@
     <div class="row align-items-center" id="mobile-weather4">
         <div id="weather-card4" class="column-12">
             <div class="card text-center">
-                <div class="card-header">
-                    DAY
+                <div class="card-header" id="day4">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="weather-mobile4">WEATHER</h5>
-                    <p class="icon">ICON</p>
+                    <div id="icon4"><img id="wicon4" src="" alt="Weather icon"></div>
                 </div>
 
                 <div class="card-footer"><p class="high">HIGH</p><div id="high-mobile4"></div>
@@ -157,12 +156,11 @@
     <div class="row align-items-center" id="mobile-weather5">
         <div id="weather-card5" class="column-12">
             <div class="card text-center">
-                <div class="card-header">
-                    DAY
+                <div class="card-header" id="day5">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="weather-mobile5">WEATHER</h5>
-                    <p class="icon">ICON</p>
+                    <div id="icon5"><img id="wicon5" src="" alt="Weather icon"></div>
                 </div>
                 <div class="card-footer"><p class="high">HIGH</p><div id="high-mobile5"></div>
                 </div>
@@ -178,12 +176,11 @@
     <div class="row align-items-center" id="mobile-weather6">
         <div id="weather-card6" class="column-12">
             <div class="card text-center">
-                <div class="card-header">
-                    DAY
+                <div class="card-header" id="day6">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title" id="weather-mobile6">WEATHER</h5>
-                    <p class="icon">ICON</p>
+                    <div id="icon6"><img id="wicon6" src="" alt="Weather icon"></div>
                 </div>
                 <div class="card-footer"><p class="high">HIGH</p><div id="high-mobile6"></div>
                 </div>
@@ -269,6 +266,8 @@
             units: "imperial"
         }).done(function (data) {
             console.log('The entire response:', data);
+
+
             //current
             $('.current-mobile').empty().append(Math.round(data.current.temp));
 
@@ -337,6 +336,22 @@
             color($('#weather-mobile5'), data.daily[5].weather[0].description);
             $('#weather-mobile6').empty().append(data.daily[6].weather[0].description);
             color($('#weather-mobile6'), data.daily[6].weather[0].description);
+            // icons
+            // var iconcode = data.daily[0].weather[0].icon;
+            // var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            // $('#wicon').attr('src', iconurl);
+
+            //loop for days of the week
+            for(let i = 0; i < 7; i++) {
+                let date = new Date(data.daily[i].dt * 1000);
+                let day = date.toLocaleString('default', {weekday: 'long', day: 'numeric', month: 'long'});
+                $("#day" + date.getDay()).append(day);
+
+                let iconcode = data.daily[i].weather[0].icon;
+                let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                $('#wicon' + date.getDay()).attr('src', iconurl);
+            }
+
 
         });
     }
@@ -391,14 +406,10 @@
 
         let searchLocation = document.querySelector('#submit');
         searchLocation.addEventListener('click', search);
-        // days of week
-        const dayOfWeekDigit = new Date().getDay();
-        console.log(dayOfWeekDigit); //  0
-        const dayOfWeekName = new Date().toLocaleString(
-            'default', {weekday: 'long'}
-        );
 
-        $('#day0').empty().append(dayOfWeekName);
+
+
+
 
     })();
 </script>
