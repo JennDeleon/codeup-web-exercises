@@ -35,3 +35,35 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+
+
+let language = users.filter( x => x.languages.length >= 3);
+console.log(language);
+
+
+
+let email = users.map(function (user) {
+    return user.email;
+});
+
+console.log(email);
+
+
+
+let totalYearsExperience = users.reduce((total,user) => {
+    return total + user.yearsOfExperience;
+},0);
+
+console.log(totalYearsExperience);
+
+
+
+let longestEmail = users.reduce((longEmail, user) => {
+    if (user.email.length > longEmail.length) {
+        return user.email;
+    } else {
+        return longEmail;
+    }
+},"");
+
+console.log(longestEmail);
