@@ -255,3 +255,25 @@
 //     }
 // }
 // console.log(convertLowHighToObject('35, 42'));
+
+// Write a function called countDuplicates that takes in a string and returns an object that contains the count for each letter within the given string.
+//
+// ex: countDuplicates("adsjfdsfsfjsdjfhacabcsbajda")
+// returns { a: 5, d: 4, s: 5, j: 4, f: 4, h: 1, c: 2, b: 2 }
+
+function countDuplicates(str) {
+    // Initiate object
+    let letterCountObject = {};
+//     Initiate Starting Count
+    let count =1;
+//     Traverse
+    for (let i = 0; i < str.length; i++){
+        if (!(str[i] in letterCountObject)) {
+            letterCountObject[str[i]] = count;
+        } else {
+            letterCountObject[str[i]] = letterCountObject[str[i]] + 1;
+        }
+    }
+    return letterCountObject;
+}
+console.log(countDuplicates("ababdd"));
