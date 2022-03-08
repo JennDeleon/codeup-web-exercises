@@ -261,19 +261,46 @@
 // ex: countDuplicates("adsjfdsfsfjsdjfhacabcsbajda")
 // returns { a: 5, d: 4, s: 5, j: 4, f: 4, h: 1, c: 2, b: 2 }
 
-function countDuplicates(str) {
-    // Initiate object
-    let letterCountObject = {};
-//     Initiate Starting Count
-    let count =1;
-//     Traverse
-    for (let i = 0; i < str.length; i++){
-        if (!(str[i] in letterCountObject)) {
-            letterCountObject[str[i]] = count;
-        } else {
-            letterCountObject[str[i]] = letterCountObject[str[i]] + 1;
-        }
+// function countDuplicates(str) {
+//     // Initiate object
+//     let letterCountObject = {};
+// //     Initiate Starting Count
+//     let count =1;
+// //     Traverse
+//     for (let i = 0; i < str.length; i++){
+//         if (!(str[i] in letterCountObject)) {
+//             letterCountObject[str[i]] = count;
+//         } else {
+//             letterCountObject[str[i]] = letterCountObject[str[i]] + 1;
+//         }
+//     }
+//     return letterCountObject;
+// }
+// console.log(countDuplicates("ababdd"));
+
+
+// Write a function called makePerson. It takes 2 arguments: personName and age.
+//     personName must be at least 1 character long. age must be between 1 and 150.
+// If either of the parameters is invalid, output an appropriate message to the console and return FALSE.
+//     If both parameters are valid, return an object containing personName and age.
+//     E.g.,
+//     console.log(makePerson("Bob", 30)); // outputs {personName:"Bob", age:30}
+// console.log(makePerson("", 30));
+// // outputs:
+// Person name cannot be blank
+// false
+function makePerson(personName, age){
+    // prompt("Enter a name and an age below 50");
+    if (personName.length === 0){
+     console.log("You need to enter a name...")
+        return false;
     }
-    return letterCountObject;
+    if ( age <= 1 || age >= 50){
+        console.log("Enter your name");
+        return false;
+    }
+    if (typeof personName == "string" && typeof age == NaN) {
+        return alert(personName + " is a great name " + "and you made them " + age + "? That's cool.");
+    }
 }
-console.log(countDuplicates("ababdd"));
+console.log(makePerson("Jenn"), 5);
