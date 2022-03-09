@@ -289,18 +289,19 @@
 // // outputs:
 // Person name cannot be blank
 // false
-function makePerson(personName, age){
-    // prompt("Enter a name and an age below 50");
-    if (personName.length === 0){
-     console.log("You need to enter a name...")
-        return false;
-    }
-    if ( age <= 1 || age >= 50){
-        console.log("Enter your name");
-        return false;
-    }
-    if (typeof personName == "string" && typeof age == NaN) {
-        return alert(personName + " is a great name " + "and you made them " + age + "? That's cool.");
-    }
-}
-console.log(makePerson("Jenn"), 5);
+// function makePerson(personName, age){
+//     // prompt("Enter a name and an age below 50");
+//     if (personName.length === 0){
+//      console.log("You need to enter a name...")
+//         return false;
+//     }
+//     if ( age <= 1 || age >= 50){
+//         console.log("Enter your name");
+//         return false;
+//     }
+//     if (typeof personName == "string" && typeof age == NaN) {
+//         return alert(personName + " is a great name " + "and you made them " + age + "? That's cool.");
+//     }
+// }
+// console.log(makePerson("Jenn"), 5);
+
