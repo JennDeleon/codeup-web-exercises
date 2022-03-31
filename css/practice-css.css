@@ -1,7 +1,67 @@
-/*body{*/
-/*   background-color: #403a35;*/
-/*}*/
-/*.gif {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
+header {
+    background-image: url("https://picsum.photos/1200/300");
+    background-size: cover;
+    max-height: 250px;
+}
+.img-circle {
+    border-radius: 100%;
+    border: 4px solid ;
+}
+
+
+
+
+
+
+.post{
+    text-align: center;
+    border: 2px solid #d0e6f2;
+    background-color: #d0e6f2;
+    padding: 20px;
+    width: 50px;
+    height: 15px;
+}
+
+#larger-box{
+    margin-top: 5px;
+    border: 2px solid #57a7cf;
+    width: 300px;
+    height: 450px;
+    color: #497da6;
+    font-weight: bolder;
+}
+
+#bulletin {
+    background-color: #5ba6cc;
+    margin: 0;
+    height: 35px;
+    color: white;
+}
+.date {
+    text-align: center;
+    border: 2px solid #d0e6f2;
+    background-color: #d0e6f2;
+    padding: 20px;
+    width: 50px;
+    height: 15px;
+    color: black !important;
+    font-weight: lighter !important;
+}
+td, tr{
+   padding: 1px;
+}
+
+p.post {
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+.myStory {
+    border: 1px solid rgb(0, 52, 112);
+    background-color: white;
+    margin: 50px;
+    padding: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    padding-bottom: 30px;;
+}
